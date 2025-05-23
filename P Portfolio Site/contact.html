@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio - Contact Me</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  /* Nav styles */
+  nav {
+    background: #222;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  nav li {
+    position: relative;
+  }
+  nav > ul > li {
+    margin-right: 30px;
+  }
+  nav a {
+    display: block;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #444;
+  }
+  nav li:hover > a {
+    background-color: #444;
+  }
+  /* Dropdown */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    min-width: 180px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -20px);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  nav li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+  .dropdown li {
+    margin: 0;
+    width: 100%;
+  }
+  .dropdown a {
+    padding: 12px 15px;
+    font-weight: 400;
+    color: #ddd;
+    white-space: nowrap;
+  }
+  .dropdown a:hover, .dropdown a:focus {
+    background-color: #555;
+    color: white;
+  }
+  /* Main content */
+  main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .contact-section {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .contact-section h2 {
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact-form {
+    display: grid;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .form-group label {
+    font-weight: 600;
+    color: #444;
+  }
+  .required::after {
+    content: " *";
+    color: #dc3545;
+  }
+  .required-note {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+  }
+  .form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* Custom Select Styles */
+  .select-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .select-wrapper select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    appearance: none;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .select-wrapper::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+  }
+  
+  .select-wrapper select:focus {
+    outline: none;
+    border-color: #0d6efd;
+  }
+  
+  .select-wrapper select option {
+    padding: 12px;
+  }
+  
+  /* Conditional Dropdown Styles */
+  .conditional-dropdown {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .conditional-dropdown.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .submit-btn {
+    background: #0d6efd;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .submit-btn:hover {
+    background: #0b5ed7;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    margin: 20px 0;
+  }
+  .social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #0d6efd;
+  }
+  .social-links i {
+    font-size: 24px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav > ul > li {
+      margin-right: 0;
+    }
+    nav a {
+      padding: 15px 10px;
+    }
+    .dropdown {
+      position: static;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    nav li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+    .contact-section {
+      padding: 20px;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="about.html">About</a>
+    </li>
+    <li>
+      <a href="all-projects.html">Projects</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <section id="form" class="contact-section">
+    <h2>Get in Touch</h2>
+    <p class="required-note">Fields marked with * are required</p>
+    <form class="contact-form" action="#" method="POST">
+      <div class="form-group">
+        <label for="name" class="required">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="email" class="required">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Your email address">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number (Optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+      </div>
+      <div class="form-group">
+        <label for="contact-type" class="required">Reason For Contacting</label>
+        <div class="select-wrapper">
+          <select id="contact-type" name="contact-type" required onchange="handleContactTypeChange(this.value)">
+            <option value="" disabled selected>Select a reason for contacting</option>
+            <option value="project">Project Inquiry</option>
+            <option value="job">Job Opportunity</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="question">General Question</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Job Opportunity Dropdown -->
+      <div id="job-dropdown" class="form-group conditional-dropdown">
+        <label for="job-type" class="required">Job Type</label>
+        <div class="select-wrapper">
+          <select id="job-type" name="job-type">
+            <option value="" disabled selected>Select job type</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="video-editing">Video Editing</option>
+            <option value="web-development">Web Development</option>
+            <option value="hardware">Hardware Issue</option>
+            <option value="software">Software Design</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Collaboration Dropdown -->
+      <div id="collaboration-dropdown" class="form-group conditional-dropdown">
+        <label for="collaboration-type" class="required">Collaboration Type</label>
+        <div class="select-wrapper">
+          <select id="collaboration-type" name="collaboration-type">
+            <option value="" disabled selected>Select collaboration type</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="video-editing">Video Editing</option>
+            <option value="web-development">Web Development</option>
+            <option value="hardware">Hardware Issue</option>
+            <option value="software">Software Design</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- General Question Dropdown -->
+      <div id="question-dropdown" class="form-group conditional-dropdown">
+        <label for="question-type" class="required">Question Type</label>
+        <div class="select-wrapper">
+          <select id="question-type" name="question-type">
+            <option value="" disabled selected>Select question type</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="video-editing">Video Editing</option>
+            <option value="web-development">Web Development</option>
+            <option value="hardware">Hardware Issue</option>
+            <option value="software">Software Design</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject" class="required">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="What is this regarding?">
+      </div>
+      <div class="form-group">
+        <label for="message" class="required">Message</label>
+        <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<script>
+function handleContactTypeChange(value) {
+  // Hide all conditional dropdowns first
+  document.querySelectorAll('.conditional-dropdown').forEach(dropdown => {
+    dropdown.classList.remove('show');
+  });
+
+  // Show the appropriate dropdown based on selection
+  switch(value) {
+    case 'job':
+      document.getElementById('job-dropdown').classList.add('show');
+      break;
+    case 'collaboration':
+      document.getElementById('collaboration-dropdown').classList.add('show');
+      break;
+    case 'question':
+      document.getElementById('question-dropdown').classList.add('show');
+      break;
+    // 'project' and 'other' don't show any additional dropdowns
+  }
+}
+</script>
+
+<footer>
+  <div class="social-links">
+    <a href="https://www.facebook.com/profile.php?id=61550108244820" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://instagram.com/ato_beezy" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+  &copy; 2024 My Portfolio. Designed by K.A.B.
+</footer>
+</body>
+</html> 

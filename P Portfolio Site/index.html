@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio - Home</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  /* Header styles */
+  .header {
+    background: url('Images/Ace.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+  }
+  .header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .header p {
+    font-size: 1.2rem;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  /* Nav styles */
+  nav {
+    background: #222;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  nav li {
+    position: relative;
+  }
+  nav > ul > li {
+    margin-right: 30px;
+  }
+  nav a {
+    display: block;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #444;
+  }
+  nav li:hover > a {
+    background-color: #444;
+  }
+  /* Dropdown */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    min-width: 180px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -20px);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  nav li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+  .dropdown li {
+    margin: 0;
+    width: 100%;
+  }
+  .dropdown a {
+    padding: 12px 15px;
+    font-weight: 400;
+    color: #ddd;
+    white-space: nowrap;
+  }
+  .dropdown a:hover, .dropdown a:focus {
+    background-color: #555;
+    color: white;
+  }
+  /* Main content */
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  ul.skills-list {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+    columns: 2;
+    column-gap: 40px;
+  }
+  ul.skills-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 18px;
+  }
+  ul.skills-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav > ul > li {
+      margin-right: 0;
+    }
+    nav a {
+      padding: 15px 10px;
+    }
+    .dropdown {
+      position: static;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    nav li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+    ul.skills-list {
+      columns: 1;
+    }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="about.html">About</a>
+    </li>
+    <li>
+      <a href="all-projects.html">Projects</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="header">
+  <!-- <img src="/Images/Ace.jpg" alt="Kelvin Brown"> -->
+  <h1>Kelvin Brown</h1>
+  <strong><p style="color: white;">Web Developer & Graphic Designer</p></strong>
+</div>
+
+<main>
+  <section id="intro">
+    <h1>Hi, I'm a Web Developer & Graphic Designer</h1>
+    <p>Welcome to my portfolio! I combine creativity with coding to build beautiful and functional websites and designs.
+    Take a look through my skills and projects to see what I can do and possibly what i can do for you.</p>
+  </section>
+  
+  <section id="skills" style="margin-top:40px;">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Responsive Web Design (HTML5, CSS3, JavaScript)</li>
+      <li>React, Vue.js & Frontend Frameworks</li>
+      <li>UI/UX Design Principles</li>
+      <li>Branding & Visual Identity</li>
+      <li>Adobe Photoshop & Illustrator</li>
+      <li>Video Editing</li>
+      <li>Hardware Testing & Repairs </li>
+      <!-- <li>Logo & Print Design</li>
+      <li>Node.js & Backend Basics</li>
+      <li>Cross-Browser Compatibility</li> -->
+    </ul>
+  </section>
+
+  <section id="tools" style="margin-top:40px;">
+    <h2>Tools & Software</h2>
+    <ul class="skills-list">
+      <li>VS Code & Git</li>
+      <li>Adobe Creative Suite (Photoshop, Illustrator, XD)</li>
+      <li>Figma & Sketch</li>
+      <li>Webpack & Babel</li>
+      <li>Chrome DevTools & Debugging</li>
+      <li>WordPress & CMS Basics</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 My Portfolio. Designed by Me.
+</footer>
+</body>
+</html>

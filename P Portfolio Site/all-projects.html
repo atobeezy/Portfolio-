@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio - All Projects</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  /* Nav styles */
+  nav {
+    background: #222;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  nav li {
+    position: relative;
+  }
+  nav > ul > li {
+    margin-right: 30px;
+  }
+  nav a {
+    display: block;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #444;
+  }
+  nav li:hover > a {
+    background-color: #444;
+  }
+  /* Main content */
+  main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .projects-section {
+    margin-bottom: 60px;
+  }
+  .projects-section h2 {
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+  }
+  .projects-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #0d6efd;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .project-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  .project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .project-content {
+    padding: 20px;
+  }
+  .project-content h3 {
+    color: #222;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  .project-content p {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  .project-link {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #0d6efd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .project-link:hover {
+    background: #0b5ed7;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  .social-links {
+    margin: 20px 0;
+  }
+  .social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #0d6efd;
+  }
+  .social-links i {
+    font-size: 24px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav > ul > li {
+      margin-right: 0;
+    }
+    nav a {
+      padding: 15px 10px;
+    }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="about.html">About</a>
+    </li>
+    <li>
+      <a href="all-projects.html">Projects</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <section id="web-projects" class="projects-section">
+    <h2>Web Development Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="path-to-your-ecommerce-image.jpg" alt="E-commerce Website" class="project-image">
+        <div class="project-content">
+          <h3>E-commerce Website</h3>
+          <p>A full-featured online store with shopping cart, user authentication, and payment integration.</p>
+          <a href="https://github.com/your-username/ecommerce" class="project-link" target="_blank">View Project</a>
+        </div>
+      </div>
+      <!-- Add more web development projects here -->
+    </div>
+  </section>
+
+  <section id="graphic-projects" class="projects-section">
+    <h2>Graphic Design Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="path-to-your-design-image.jpg" alt="Logo Design" class="project-image">
+        <div class="project-content">
+          <h3>Brand Identity Design</h3>
+          <p>Complete brand identity package including logo, color palette, and brand guidelines.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Add more graphic design projects here -->
+    </div>
+  </section>
+
+  <section id="misc-projects" class="projects-section">
+    <h2>Miscellaneous Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="path-to-your-misc-image.jpg" alt="Misc Project" class="project-image">
+        <div class="project-content">
+          <h3>Project Title</h3>
+          <p>Brief description of the project and its key features.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+      <!-- Add more miscellaneous projects here -->
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="social-links">
+    <a href="https://facebook.com/your-profile" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://instagram.com/ato_beezy" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://linkedin.com/in/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+  &copy; 2024 My Portfolio. Designed by K.A.B.
+</footer>
+</body>
+</html> 

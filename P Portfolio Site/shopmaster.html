@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ShopMaster - Home</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdfdfd;
+    color: #333;
+    line-height: 1.5;
+  }
+  /* Header */
+  header {
+    background-color: #0d6efd;
+    color: white;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(13,110,253,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin: 0;
+    cursor: default;
+  }
+  nav {
+    margin-top: 8px;
+  }
+  nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffc107;
+  }
+  /* Hero Section */
+  .hero {
+    background: url('https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  /* Main content */
+  main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+  }
+  section.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+  }
+  article.product-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  article.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+  .product-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  .product-details {
+    padding: 15px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222;
+  }
+  .product-description {
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1;
+    margin-bottom: 12px;
+  }
+  .product-price {
+    color: #0d6efd;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  /* Footer */
+  footer {
+    background: #222;
+    color: #aaa;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .hero {
+      font-size: 1.3rem;
+      height: 200px;
+    }
+    article.product-card {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>ShopMaster</h1>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Categories</a></li>
+      <li><a href="#">Offers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" aria-label="Promotional banner">
+  Best Deals on the Latest Products!
+</section>
+
+<main>
+  <section class="products" aria-label="Product List">
+    <!-- <article class="product-card" tabindex="0">
+      <img class="product-image" src="https://images.unsplash.com/photo-1513708928673-3322086b7e3f?auto=format&fit=crop&w=600&q=80" alt="Wireless Headphones" />
+      <div class="product-details">
+        <h2 class="product-title">Wireless Headphones</h2>
+        <p class="product-description">High-quality wireless headphones for immersive sound experience.</p>
+        <div class="product-price">$99.00</div>
+      </div>
+    </article> -->
+
+    <!-- <article class="product-card" tabindex="0">
+      <img class="product-image" src="Images/Smart Watch.jpg" alt="Smart Watch" />
+      <div class="product-details">
+        <h2 class="product-title">Smart Watch</h2>
+        <p class="product-description">Stay connected on the go with fitness tracking and notifications.</p>
+        <div class="product-price">$149.00</div>
+      </div>
+    </article> -->
+
+    <article class="product-card" tabindex="0">
+      <img class="product-image" src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=80" alt="Modern Chair" />
+      <div class="product-details">
+        <h2 class="product-title">Modern Chair</h2>
+        <p class="product-description">Stylish and comfortable chair perfect for your living room or office.</p>
+        <div class="product-price">$249.00</div>
+      </div>
+    </article>
+
+    <!-- <article class="product-card" tabindex="0">
+        <img class="product-image" src="https://images.unsplash.com/photo-1583573636249-18f69a0eab20?auto=format&fit=crop&w=600&q=80" alt="Bluetooth Speaker" />
+        <div class="product-details">
+        <h2 class="product-title">Bluetooth Speaker</h2>
+        <p class="product-description">Portable speaker with excellent sound and battery life.</p>
+        <div class="product-price">$79.00</div>
+      </div>
+    </article> -->
+
+    <article class="product-card" tabindex="0">
+      <img class="product-image" src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80" alt="Digital Camera" />
+      <div class="product-details">
+        <h2 class="product-title">Digital Camera</h2>
+        <p class="product-description">Capture stunning photos and videos with this compact camera.</p>
+        <div class="product-price">$499.00</div>
+      </div>
+    </article>
+
+    <article class="product-card" tabindex="0">
+      <img class="product-image" src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=600&q=80" alt="Kitchen Set" />
+      <div class="product-details">
+        <h2 class="product-title">Kitchen Set</h2>
+        <p class="product-description">Bring your dream kitchen to life with this set.</p>
+        <div class="product-price">$1099.00</div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 ShopMaster. All rights reserved.
+</footer>
+</body>
+</html> 

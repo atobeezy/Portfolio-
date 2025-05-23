@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio - About Me</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  /* Nav styles */
+  nav {
+    background: #222;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  nav li {
+    position: relative;
+  }
+  nav > ul > li {
+    margin-right: 30px;
+  }
+  nav a {
+    display: block;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #444;
+  }
+  nav li:hover > a {
+    background-color: #444;
+  }
+  /* Dropdown */
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #333;
+    min-width: 180px;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -20px);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  nav li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+  }
+  .dropdown li {
+    margin: 0;
+    width: 100%;
+  }
+  .dropdown a {
+    padding: 12px 15px;
+    font-weight: 400;
+    color: #ddd;
+    white-space: nowrap;
+  }
+  .dropdown a:hover, .dropdown a:focus {
+    background-color: #555;
+    color: white;
+  }
+  /* Main content */
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .about-section {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  .about-section h2 {
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  .about-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  .highlight {
+    color: #0d6efd;
+    font-weight: 600;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: #777;
+    font-size: 0.9rem;
+  }
+  
+  .social-links {
+    margin: 20px 0;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #0d6efd;
+  }
+  
+  .social-links i {
+    font-size: 24px;
+  }
+  /* Responsive */
+  @media (max-width: 600px) {
+    nav ul {
+      flex-direction: column;
+    }
+    nav > ul > li {
+      margin-right: 0;
+    }
+    nav a {
+      padding: 15px 10px;
+    }
+    .dropdown {
+      position: static;
+      transform: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    nav li:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+    .about-section {
+      padding: 20px;
+    }
+  }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="about.html">About</a>
+    </li>
+    <li>
+      <a href="all-projects.html">Projects</a>
+    </li>
+    <li>
+      <a href="contact.html">Contact</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <section id="education" class="about-section">
+    <h2>About Me</h2>
+    <p>Hello! I'm <span class="highlight">Kelvin Ato Brown</span>, a passionate web developer and graphic designer.</p>
+    <p>I'm currently a Level 100 student at the <span class="highlight">University of Mines and Technology, Tarkwa</span>, pursuing a degree in <span class="highlight">Computer Science and Engineering</span>.</p>
+  </section>
+
+  <section id="experience" class="about-section">
+    <h2>Experience</h2>
+    <p>With <span class="highlight">3 years of experience</span> in web development and design, I've worked on various projects that have helped me develop a strong foundation in both technical and creative aspects of the field.</p>
+  </section>
+
+  <section id="pricing" class="about-section">
+    <h2>Pricing</h2>
+    <p>My pricing is based on three key factors:</p>
+    <ul style="list-style: none; margin-left: 20px;">
+      <li>• Content requirements</li>
+      <li>• Project complexity</li>
+      <li>• Time investment</li>
+    </ul>
+    <p>This ensures fair and transparent pricing for each unique project.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="social-links">
+    <a href="https://facebook.com/your-profile" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://instagram.com/ato_beezy" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="www.linkedin.com/in/kelvin-brown-3384a7366" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+  &copy; 2024 My Portfolio. Designed by K.A.B.
+</footer>
+</body>
+</html> 
